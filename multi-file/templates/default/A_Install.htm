@@ -1,0 +1,54 @@
+<h2 style='text-align:center'>Установка</h2>
+
+<div class='A_ParamSectionHeader'>Параметры подключения к БД</div>
+<table>
+  <tr><td>Хост</td><td><input id='%IDP%DB_Host' size='50' /></td></tr>
+  <tr><td>Логин</td><td><input id='%IDP%DB_User' size='50' /></td></tr>
+  <tr><td>Пароль</td><td><input id='%IDP%DB_Password' size='50' /></td></tr>
+  <tr><td>Имя БД</td><td><input id='%IDP%DB_DBName' size='50' /></td></tr>
+</table>
+<br />
+<div class='A_ParamSectionHeader'>Аккаунт администратора гостевой книги</div>
+<table>
+  <tr>
+    <td>Логин</td>
+    <td>
+      <input id='%IDP%AdminLogin' size='50' />
+        До 30 символов; только латинские буквы, цифры и '_'
+      <div id='%IDP%AdminLoginMsgBox' class='ErrorMsgBox' style='display:none'>
+        <div id='%IDP%AdminLoginMsg' class='ErrorMsg'></div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>Пароль</td>
+    <td>
+      <input id='%IDP%AdminPassword' type='password' size='25' />
+        повтор <input id='%IDP%AdminPassword2' type='password' size='25' />
+        5-16 символов; только латинские буквы, цифры и '_'</td></tr>
+      <div id='%IDP%AdminPasswordMsgBox' class='ErrorMsgBox' style='display:none'>
+        <div id='%IDP%AdminPasswordMsg' class='ErrorMsg'></div>
+      </div>
+    </td>
+  </tr>
+</table>
+<br />
+- Параметры будут сохранены в файл config.php в корневой директории приложения.<br />
+- Загружаемые файлы изображений сохраняются в files/.<br />
+- Логи в отладочном режиме (define('DEBUG', true);) сохраняются в logs/.<br />
+PHP должен иметь права записи в эти директории.<br />
+<br />
+<button type='button' id='%IDP%InstallBtn'>
+  Установить
+  <img id='%IDP%InstallWait' src='%ImagesPrefix%wait.gif'
+       class='Icon16' style='display:none'>
+</button>
+
+<div id='%IDP%InstallLog' class='A_InstallLog' style='display:none'></div>
+
+<div id='%IDP%InstallMsgBox' class='ErrorMsgBox' style='display:none'>
+  <div id='%IDP%InstallMsg' class='ErrorMsg'></div>
+</div>
+
+<br />
+<a id='%IDP%GoToConfigTrigger' class='Clickable' style='display:none'>Конфигурация</a>

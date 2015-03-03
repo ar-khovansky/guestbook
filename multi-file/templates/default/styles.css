@@ -1,0 +1,93 @@
+body { margin: 0; padding: 0; }
+
+body, input, textarea, select {
+	font-family: Tahoma, Arial, Verdana, Helvetica, sans-serif;
+	font-size: 13px;
+}
+
+a { color: #000060; text-decoration: none; }
+a:hover { text-decoration: underline; }
+a[disabled=true] { color: Gray; text-decoration: none; cursor: default; }
+
+img { border: none; }
+
+input { margin: 0; border: 1px solid Silver; padding: 2px 4px; }
+input[type="checkbox"], input[type="radio"]
+  { border: none; margin: 0; padding: 0; vertical-align: middle; }
+
+textarea { margin: 0; }
+
+
+
+.Clear { clear: both; }
+
+table.markup { margin: 0; border: none; padding: 0; border-collapse: collapse; }
+table.markup > tbody > tr > td { margin: 0; border: none; padding: 0; }
+
+.w100 { width: 100%; }
+
+.BorderBox { box-sizing: border-box;
+          -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box; }
+
+
+
+.Clickable { cursor: pointer; }
+
+a.Control { cursor: pointer; }
+
+.Disabled { color: Gray; }
+
+img.Icon16 { width: 16px; height: 16px; vertical-align: bottom; }
+
+.ErrorMsgBox { border: 1px solid #A00000; background-color: #FFD0D0; color: #A00000;
+               padding: 0.2em; }
+
+
+
+#Main { width: 980px; margin: auto; }
+
+
+.LogInBox { border: 1px solid Silver; background-color: #F0F0F0; }
+
+
+.PageLink.Number { padding: 2px; }
+.PageLink.Dot { padding: 2px 0 2px 0; }
+.PageLink.Current { background: #E0E0E0; font-weight: bold; }
+
+.PageNavigationBlock { margin: 0.5em 0; }
+
+textarea[disabled] { background-color: transparent; }
+
+
+
+table.Msgs { width: 100%; border-collapse: collapse; }
+
+.Msg.Even { background-color: #FAFAFF; }
+.Msg.Odd { background-color: #FFFFFA; }
+.Msg { vertical-align: top; }
+.Msg > td { border: 1px solid Silver; }
+
+.Msg .UserBox { padding: 0.5em; vertical-align: top; }
+.Msg .UserName { font-weight: bold; }
+.Msg .UserGroup { font-size: 11px; font-weight: bold; }
+.Msg .Admin { color: #FF2020; }
+
+.Msg .MsgBox { width: 100%; padding: 0; }
+.Msg .Header { border-bottom: 1px solid #E0E0E0; padding: 3px 5px; font-size: 11px; }
+.Msg .Timestamp { color: DimGray; }
+.Msg .Text { padding: 0.5em; }
+
+.Msg textarea { border-width: 0 0 1px; border-color: #E0E0E0; }
+
+textarea.MsgEdit { width: 100%; height: 11em; padding: 0.5em;
+                   border: 1px solid Silver; }
+
+table.Files td { padding-right: 15px !important; }
+
+.EditButtonsBox { float: right; }
+
+
+
+#A_Main { width: 980px; margin: auto; }
+.A_ParamSectionHeader { font-weight: bold; }
+.A_InstallLog { border: 1px solid Silver; background-color: #F0F0F0; padding: 0.5em; }

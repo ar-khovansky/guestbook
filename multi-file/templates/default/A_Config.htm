@@ -1,0 +1,24 @@
+<h2 style='text-align:center'>Конфигурация</h2>
+
+Параметры хранятся в файле config.php.<br />
+<br />
+<div class='A_ParamSectionHeader'>Вид</div>
+<table>
+  <tr><td>Заголовок окна</td><td><input id='%IDP%SiteTitle' size='100' /></td></tr>
+  <tr><td>Число сообщений на странице</td><td><input id='%IDP%NumMsgsOnPage' size='5' /></td></tr>
+  <!--<tr>-->
+  <!--  <td>Шаблон оформления</td>-->
+  <!--  <td><input id='%IDP%Template' size='30' /> Шаблоны находятся в директории templates</td>-->
+  <!--</tr>-->
+  <tr><td>Кодировка файловой системы</td>
+      <td><input id='%IDP%FileSystemEncoding' size='10' /></td></tr>
+</table>
+<br />
+<button type='button' id='%IDP%ApplyBtn'>
+  Применить
+  <img id='%IDP%ApplyWait' src='%ImagesPrefix%wait.gif' class='Icon16' style='display:none'>
+</button>
+
+<div id='%IDP%ApplyMsgBox' class='ErrorMsgBox' style='display:none'>
+  <div id='%IDP%ApplyMsg' class='ErrorMsg'></div>
+</div>

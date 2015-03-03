@@ -1,0 +1,67 @@
+<br />
+
+<div>
+  <div style='position:relative'>
+    <img src='%ImagesPrefix%logo_softline.png' style='position:absolute' />
+  </div>
+  <div style='text-align:center'>
+    <div style='font-size:2em; font-weight:bold;'>Гостевая книга</div>
+    <div>Хованский А. О.</div>
+  </div>
+</div>
+
+<div id='UserBlock_Guest' style='display:none'>
+  <div><a id='ToggleLogInPaneTrigger' class='Clickable'>Вход</a> &sdot;
+       <a id='ToggleRegisterPaneTrigger' class='Clickable'>Регистрация</a></div>
+  
+  <div style='position:relative'>
+    <div id='LogInBox' class='LogInBox' style='position:absolute; display:none'>
+      Логин <input id='LogIn_Login' size='30' />
+      Пароль <input id='LogIn_Password' type='password' size='20' />
+      <button type='button' id='LogInBtn'>
+        Вход
+        <img id='LogInWait' src='%ImagesPrefix%wait.gif' class='Icon16' style='display:none'>
+      </button>
+      <div id='LogInMsgBox' class='ErrorMsgBox' style='display:none'>
+        <div id='LogInMsg' class='ErrorMsg'></div>
+      </div>
+    </div>
+    
+    <div id='Register' style='position:absolute'></div>
+  </div>
+</div>
+<div id='UserBlock_User' style='display:none'>
+  Здравствуйте, <span id='Login'></span> &sdot; <a id='LogOutTrigger' class='Clickable'>Выход</a>
+  <span id='UserBlock_Admin' style='display:none'>
+    | <a href='admin.php' target='_blank'>Панель управления</a>
+  </span>
+</div>
+
+<hr />
+
+<div>
+  <div id='MsgsMsgBox' class='ErrorMsgBox' style='display:none'>
+    <div id='MsgsMsg' class='ErrorMsg'></div>
+  </div>
+  <div id='MsgsView'>
+    <div id='MsgsNavTop' class='PageNavigationBlock'></div>
+    <div id='MsgsList'></div>
+    <div id='MsgsNavBottom' class='PageNavigationBlock'></div>
+  </div>
+  
+  <br />
+  
+  <div id='PostBlock_Guest' style='display:none'>
+    Только зарегистрированные пользователи могут оставлять сообщения
+  </div>
+  <div id='PostBlock_User' style='display:none'>
+    <div style='font-weight:bold; text-align: center'>Ваше сообщение:</div>
+    
+    <div id='MsgEdit'></div>
+  </div>
+</div>
+
+<br />
+<hr />
+<div style='font-size:11px; text-align: right'>Хованский А. О.</div>
+<br />

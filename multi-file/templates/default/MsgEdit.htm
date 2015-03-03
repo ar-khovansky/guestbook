@@ -1,0 +1,23 @@
+<textarea id='%IDP%Textarea' class='MsgEdit BorderBox'></textarea>
+
+Загрузить изображение:
+<form id='%IDP%FilesForm' enctype='multipart/form-data'>
+  <input type='file' name='file'>
+</form>
+
+<table id='%IDP%Files' class='markup Files'></table>
+
+<div class='EditButtonsBox'>
+  <button id='%IDP%SendTrigger'>
+    Отправить
+    <span id='%IDP%ChangeIndicator' style='display:none'>*</span>
+    <img id='%IDP%SendWait' src='%ImagesPrefix%wait.gif'
+         class='Icon16' style='display:none'>
+  </button>
+  <button id='%IDP%CancelTrigger' style='display:none'>Отменить</button>
+</div>
+<div class='Clear'></div>
+
+<div id='%IDP%MsgBox' class='ErrorMsgBox' style='display:none'>
+  <div id='%IDP%Msg' class='ErrorMsg'></div>
+</div>
