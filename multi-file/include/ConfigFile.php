@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * Configuration file.
+ * It is a PHP script.
+ */
 class CConfigFile
 {
   protected $sFile;

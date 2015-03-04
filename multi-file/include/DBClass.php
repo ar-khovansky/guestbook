@@ -1,5 +1,12 @@
 <?php
 
+/*
+ * Base class for objects persisted in database. Provides validation and persistence.
+ *
+ * Such object stores its fields in array ($aData). Fields have declarative descriptions,
+ * stored in static array $aFields in child classes. Desription specifies field type, range of
+ * valid values, DB column name etc.
+ */
 class CDBClass
 {
   protected $aData = array();

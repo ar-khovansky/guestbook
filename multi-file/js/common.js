@@ -71,7 +71,9 @@ function AjaxErrorMsg( _Xhr, _sStatus, _Ex ) {
   return s;
 }
 
-//
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Manager for server queries
 
 jsx.QueryManager = {
   AttachedRequests: {},
@@ -242,7 +244,8 @@ jsx.CRequest = function( _sAction, _Data, _Callbacks, _bCaptureErrors, _Timeout 
   this.Timeout = _Timeout;
 }
 
-//
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function RenderErrorMsg( _$Msg, _aErrors ) {
   _$Msg.html(_aErrors.join('\n').HtmlEncode().NewLinesToHtml());
@@ -263,7 +266,9 @@ function HideErrorMsg( _IDP ) {
   J('#'+_IDP+'Msg').empty();
 }
 
-//
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Field of a view, visualizing a model data field. It knows how to render data value.
 
 function CViewField( _Data, _sName, _IDP, _Encoder, _bComplex, _HideBoxIfEmpty, _fnRender ) {
   this.Data = _Data;
@@ -387,7 +392,10 @@ function RenderField_jQuery( _$El, _$ ) {
     _$El.append(_$);
 }
 
-//
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Form control.
+// Knows how to validate entered value and notifies the form if current value is valid or not.
 
 function CFormField( _Form, _ID, _Validator, _bNotEmpty ) {
   this.Form = _Form;
@@ -428,7 +436,8 @@ CFormField.prototype = {
   }
 }
 
-//
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 function InsertTextAtCursor( _Textarea, _s) {
   _Textarea.focus();

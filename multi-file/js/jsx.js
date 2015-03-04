@@ -227,7 +227,9 @@ jsx.Flags.prototype = {
   }
 }
 
-//
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Callable object - function or method
 
 jsx.CCallback = function( _FnOrArr ) {
   this.a = typeof(_FnOrArr) == 'function' ? [null, _FnOrArr] : _FnOrArr;
@@ -271,7 +273,11 @@ jsx.Call_A = function( _CallObj, _aArgs ) {
   fn.apply(Obj, _aArgs);
 }
 
-//
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Reference-counting repository of objects derived from CObject. When number of references to
+// object becomes zero, object.Destruct() is called.
+// The key is object class and ID.
 
 jsx.CObjectRepository = function() {
   this.Data = {};
@@ -429,7 +435,9 @@ jsx.CObjectRepository.prototype = {
 
 jsx.ObjectRepository = new jsx.CObjectRepository;
 
-//
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Reference-counted object
 
 jsx.CObject = function() {
   //this.bConnectedAsEmitter;
@@ -457,7 +465,9 @@ jsx.Destruct = function( _Obj ) {
 }
 
 
-//
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Presentation model class.
+// A model has several views which it notifies about its changes.
 
 jsx.CModel = function() {
   this.aViews = [];
@@ -527,7 +537,11 @@ jsx.Console.GroupEnd();
 }
 jsx.Extend(jsx.CModel, jsx.CObject);
 
-//
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// View class.
+// View is attached to its model. Views are organized into hierarchical structure. View updates
+// itself and, possibly, its children when model notifies about changes.
 
 jsx.CView = function() {
   this.Model = null;
@@ -754,7 +768,11 @@ jsx.CView.prototype = {
 }
 jsx.Extend(jsx.CView, jsx.CObject);
 
-//
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// View manager.
+// Uses event mechanism to postpone UI update until after current function (usually server
+// response callback).
 
 jsx.ViewManager = {
   aTopViews: [],
@@ -819,7 +837,8 @@ jsx.Console.GroupEnd();
 }
 
 
-//
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Event queue dispatcher
 
 jsx.EventDispatcher = {
   aQueue: [],
@@ -879,7 +898,9 @@ jsx.Console.GroupEnd();
   }
 }
 
-//
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Debug console.
 
 jsx.Console = {
   Mode: 'DisableAll',

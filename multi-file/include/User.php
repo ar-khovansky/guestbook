@@ -4,6 +4,9 @@ require_once "DBClass.php";
 
 
 
+/*
+ * Guestbook user
+ */
 class CUser extends CDBClass
 {
   // Keep in sync with index.php

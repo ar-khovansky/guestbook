@@ -44,6 +44,9 @@ $sAction = $_REQUEST["Action"];
 
 try {
   switch ( $sAction ) {
+    // Query combined from several queries.
+    // Context value is the outcome of first query (if it has one), e.g. ID of object created by the server.
+    // Subsequent queries can use the context value, e.g. to read created object.
     case 'PacketQuery':
       $g_PacketQueryContextValue = null;
       
@@ -95,6 +98,9 @@ if ( DEBUG )
 
 
 
+/*
+ * Perform model service call.
+ */
 function DoAction( $_sAction, $_aRequestData )
 {
   global $config, $DB, $g_User, $g_iUserID, $g_PacketQueryContextValue;
@@ -110,6 +116,9 @@ function DoAction( $_sAction, $_aRequestData )
 
 
 
+/*
+ * Call object method.
+ */
 function CallMethod( $_aRequestData )
 {
   global $DB, $g_User;
@@ -131,6 +140,7 @@ function CallMethod( $_aRequestData )
 		}
   }
 }
+
 
 //
 

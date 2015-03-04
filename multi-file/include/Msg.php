@@ -4,6 +4,9 @@ require_once "DBClass.php";
 
 
 
+/*
+ * Guestbook message (post).
+ */
 class CMsg extends CDBClass
 {
   protected static $aFields = array(

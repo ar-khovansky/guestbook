@@ -43,6 +43,7 @@ function Init() {
       Console.GroupEnd();
 }
 
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function CGuestBook() {
@@ -382,6 +383,10 @@ CRegisterView.prototype = {
 jsx.Extend(CRegisterView, jsx.CView);
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Message manager holds list of messages (one page) and object for a new message, if user has
+// right to create it
+
 
 function CMsgManager() {
   jsx.CModel.call(this);
@@ -709,6 +714,8 @@ jsx.Extend(CMsgManagerView, jsx.CView);
 
 
 
+// View for a page of messages
+
 function CMsgsView( _DID ) {
   jsx.CView.call(this);
   
@@ -867,6 +874,8 @@ CMsgsView_Navigation.prototype = {
 jsx.Extend(CMsgsView_Navigation, jsx.CView);
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// A message (post)
 
 function CMsg( _MsgManager ) {
   jsx.CModel.call(this);
@@ -1276,6 +1285,7 @@ CMsgEditView.prototype = {
 }
 jsx.Extend(CMsgEditView, jsx.CView);
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 function CFile( _LocalFile, _Xhr ) {
@@ -1358,6 +1368,7 @@ CFileView.prototype = {
 }
 jsx.Extend(CFileView, jsx.CView);
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 function CUser() {

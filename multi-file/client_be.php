@@ -69,6 +69,9 @@ $sAction = $_REQUEST["Action"];
 
 try {
   switch ( $sAction ) {
+    // Query combined from several queries.
+    // Context value is the outcome of first query (if it has one), e.g. ID of object created by the server.
+    // Subsequent queries can use the context value, e.g. to read created object.
     case 'PacketQuery':
       $g_PacketQueryContextValue = null;
       
@@ -120,6 +123,9 @@ if ( DEBUG )
 
 
 
+/*
+ * Perform model service call.
+ */
 function DoAction( $_sAction, $_aRequestData )
 {
   global $config, $DB, $g_User, $g_iUserID, $g_PacketQueryContextValue;
@@ -128,6 +134,7 @@ function DoAction( $_sAction, $_aRequestData )
     throw new CException_Unauthorized($_sAction);
 
 	switch ($_sAction) {
+    // Get messages
     case 'GetMsgs': {
       require_once "include/Msg.php";
       require_once "include/XSLib/Array.php";
@@ -209,6 +216,8 @@ function DoAction( $_sAction, $_aRequestData )
     }
     break;
 
+
+		// Post message
 		case 'PostMsg': {
       require_once "include/Msg.php";
 			
@@ -225,6 +234,8 @@ function DoAction( $_sAction, $_aRequestData )
 		}
 		break;
 
+
+    // Update message
     case 'ChangeMsg': {
       require_once "include/Msg.php";
 			
@@ -238,6 +249,8 @@ function DoAction( $_sAction, $_aRequestData )
     }
     break;
 
+
+		// Delete message
 		case 'DeleteMsg': {
 			$iID = isset($_aRequestData['ID']) ? (int) $_aRequestData['ID'] : null;
 			
@@ -269,6 +282,7 @@ function DoAction( $_sAction, $_aRequestData )
 
 
 
+		// Register user
 		case 'Register': {
 			$sLogin = isset($_aRequestData['Login']) ? $_aRequestData['Login'] : null;
 			$sPassword = isset($_aRequestData['Password']) ? $_aRequestData['Password'] : null;
@@ -301,6 +315,8 @@ function DoAction( $_sAction, $_aRequestData )
 		}
 		break;
 
+
+		// Log user in
 		case 'LogIn': {
 			$sLogin = isset($_aRequestData['Login']) ? $_aRequestData['Login'] : null;
 			$sPassword = isset($_aRequestData['Password']) ? $_aRequestData['Password'] : null;
@@ -324,6 +340,8 @@ function DoAction( $_sAction, $_aRequestData )
 		}
 		break;
 
+
+		// Log user out
 		case 'LogOut': {
 			unset($_SESSION['Login']);
 			unset($_SESSION['Password']);
@@ -398,6 +416,9 @@ function DoAction( $_sAction, $_aRequestData )
 
 
 
+/*
+ * Call object method.
+ */
 function CallMethod( $_aRequestData )
 {
   global $DB, $g_User;
@@ -420,6 +441,7 @@ function CallMethod( $_aRequestData )
     //  return call_user_func_array(array($Msg, $sMethod), $aArgs);
   }
 }
+
 
 //
 
